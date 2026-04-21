@@ -10,7 +10,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "*.pdf",
+      "src": "assets/**",
       "use": "@vercel/static"
     }
   ],
@@ -18,6 +18,14 @@
     {
       "src": "/send-message",
       "dest": "server.js"
+    },
+    {
+      "src": "/download-resume",
+      "dest": "server.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
       "src": "/(.*)",

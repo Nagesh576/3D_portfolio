@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, './')));
 
 // Route to serve resume.pdf explicitly if needed (though static handles it)
 app.get('/download-resume', (req, res) => {
-    const file = path.join(__dirname, 'assets', 'resume.pdf');
+    const file = path.join(process.cwd(), 'assets', 'resume.pdf');
     res.download(file, 'Nagesh_Rudraram_Resume.pdf', (err) => {
         if (err) {
             console.error("Resume download error:", err);
